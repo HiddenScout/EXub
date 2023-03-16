@@ -1,6 +1,6 @@
 local Library = {}
 
-function Library.CreateWindow(Calling)
+function Library:NewWIndow(Title)
 
 	-- Instances:
 
@@ -54,8 +54,8 @@ function Library.CreateWindow(Calling)
 	Text.LayoutOrder = 1
 	Text.Size = UDim2.new(0, 451, 0, 50)
 	Text.Font = Enum.Font.Unknown
-	if Calling ~= nil then
-		Text.Text = Calling
+	if Title ~= nil then
+		Text.Text = Title
 	else
 		Text.Text = "EXub"
 	end
@@ -82,3 +82,5 @@ function Library.CreateWindow(Calling)
 
 	UICorner_4.Parent = Close
 end
+
+return Library
