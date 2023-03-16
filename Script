@@ -88,7 +88,7 @@ mainSection:NewTextBox("Teleport", "Teleports you to player that you type", func
 	if txt ~= nil then
         local plr = game.Players:FindFirstChild(txt)
         if plr then
-            game.Players.LocalPlayer.Character.PrimaryPart.Position = plr.Character.PrimaryPart.Position
+            game.Players.LocalPlayer.Character.PrimaryPart.CFrame = plr.Character.PrimaryPart.CFrame
         else
             game.StarterGui:SetCore("SendNotification", {Title = "Error 1", Text = "Player is not found!", Icon = "http://www.roblox.com/asset/?id=501164554"})
         end
@@ -98,7 +98,7 @@ end)
 mainSection:NewTextBox("Coordinate", "Teleports you to coordinate that you type", function(txt)
 	if txt ~= nil then
         local split = txt:split(" ")
-        game.Players.LocalPlayer.Character.PrimaryPart.Position = Vector3.new(split[1], split[2], split[3])
+        game.Players.LocalPlayer.Character.PrimaryPart.CFrame = Vector3.new(split[1], split[2], split[3])
     end
 end)
 
