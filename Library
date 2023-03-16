@@ -1,6 +1,6 @@
 local Library = {}
 
-function Library:NewWindow(Calling)
+function Library:CreateWindow(Calling)
 
 	-- Instances:
 
