@@ -58,7 +58,7 @@ mainSection:NewSlider("SpeedHack", "Set your player speed", 100, 0, function(s)
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
 end)
 
-mainSection:NewSlider("SpeedHack", "Set your player speed", 1000, 0, function(s)
+mainSection:NewSlider("JumpHack", "Set your player JumpPower", 1000, 0, function(s)
     game.Players.LocalPlayer.Character.Humanoid.UseJumpPower = true
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
 end)
@@ -81,24 +81,6 @@ mainSection:NewToggle("WallHack", "You can see players through walls", function(
             end
         end
         wh = false
-    end
-end)
-
-mainSection:NewTextBox("Teleport", "Teleports you to player that you type", function(txt)
-	if txt ~= nil then
-        local plr = game.Players:FindFirstChild(txt)
-        if plr then
-            game.Players.LocalPlayer.Character.PrimaryPart.CFrame = plr.Character.PrimaryPart.CFrame
-        else
-            game.StarterGui:SetCore("SendNotification", {Title = "Error 1", Text = "Player is not found!", Icon = "http://www.roblox.com/asset/?id=501164554"})
-        end
-    end
-end)
-
-mainSection:NewTextBox("Coordinate", "Teleports you to coordinate that you type", function(txt)
-	if txt ~= nil then
-        local split = txt:split(" ")
-        game.Players.LocalPlayer.Character.PrimaryPart.CFrame = Vector3.new(split[1], split[2], split[3])
     end
 end)
 
