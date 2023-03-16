@@ -1,0 +1,84 @@
+local Library = {}
+
+function Library:NewWindow(Calling)
+
+	-- Instances:
+
+	local EXub = Instance.new("ScreenGui")
+	local Main = Instance.new("Frame")
+	local UICorner = Instance.new("UICorner")
+	local Sections = Instance.new("Frame")
+	local UICorner_2 = Instance.new("UICorner")
+	local Name = Instance.new("Frame")
+	local UICorner_3 = Instance.new("UICorner")
+	local Text = Instance.new("TextLabel")
+	local Close = Instance.new("TextButton")
+	local UICorner_4 = Instance.new("UICorner")
+
+	--Properties:
+
+	EXub.Name = "EXub"
+	EXub.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+	EXub.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+	Main.Name = "Main"
+	Main.Parent = EXub
+	Main.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+	Main.Position = UDim2.new(0.0173684061, 0, 0.342741907, 0)
+	Main.Size = UDim2.new(0, 451, 0, 311)
+	Main.Draggable = true
+	Main.Active = true
+	Main.Selectable = true
+
+	UICorner.Parent = Main
+
+	Sections.Name = "Sections"
+	Sections.Parent = Main
+	Sections.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	Sections.Position = UDim2.new(0, 0, 0.135048226, 0)
+	Sections.Size = UDim2.new(0, 162, 0, 269)
+
+	UICorner_2.Parent = Sections
+
+	Name.Name = "Name"
+	Name.Parent = Main
+	Name.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	Name.Size = UDim2.new(0, 451, 0, 49)
+
+	UICorner_3.Parent = Name
+
+	Text.Name = "Text"
+	Text.Parent = Name
+	Text.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Text.BackgroundTransparency = 1.000
+	Text.LayoutOrder = 1
+	Text.Size = UDim2.new(0, 451, 0, 50)
+	Text.Font = Enum.Font.Unknown
+	if Calling ~= nil then
+		Text.Text = Calling
+	else
+		Text.Text = "EXub"
+	end
+	Text.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Text.TextScaled = true
+	Text.TextSize = 14.000
+	Text.TextWrapped = true
+	Text.TextXAlignment = Enum.TextXAlignment.Left
+
+	Close.Name = "Close"
+	Close.Parent = Name
+	Close.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	Close.Position = UDim2.new(0.889135242, 0, 0, 0)
+	Close.Size = UDim2.new(0, 50, 0, 49)
+	Close.Font = Enum.Font.Unknown
+	Close.Text = "X"
+	Close.TextColor3 = Color3.fromRGB(255, 0, 0)
+	Close.TextScaled = true
+	Close.TextSize = 14.000
+	Close.TextWrapped = true
+	Close.Activated:Connect(function()
+		EXub:Destroy()
+	end)
+
+	UICorner_4.Parent = Close
+end
