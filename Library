@@ -72,7 +72,11 @@ function Library:NewWindow(Title, coltheme)
 	Text.LayoutOrder = 10
 	Text.Size = UDim2.new(0, 325, 0, 49)
 	Text.Font = Enum.Font.Unknown
-	Text.Text = "EXuby"
+	if Title ~= nil then
+		Text.Text = Title .. " | EXub"
+	else
+		Text.Text = "EXub"
+	end
 	Text.TextColor3 = Color3.fromRGB(255, 255, 255)
 	Text.TextScaled = true
 	Text.TextSize = 14.000
