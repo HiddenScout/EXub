@@ -174,7 +174,13 @@ function Library:NewWindow(Title, coltheme)
 	
 	function Window:NewSection(NameSc)
 		local newSc = SectionExample:Clone()
+		if NameSc ~= nil then
+			newSc.Text = NameSc
+		else
+			newSc.Text = "Section"
+		end
 		newSc.Parent = Scroll
+		newSc.Visible = true
 		newSc.Activated:Connect(function()
 			local tween = game:GetService("TweenService"):Create(newSc, TweenInfo.new(0.5, Enum.EasingStyle.Cubic, Enum.EasingDirection.Out), {BackgroundColor3 = Color3.fromRGB(255, 255, 255), TextColor3 = Color3.fromRGB(0, 0, 0)})
 			tween:Play()
