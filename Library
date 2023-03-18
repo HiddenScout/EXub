@@ -1,21 +1,28 @@
 local Library = {}
 
-function Library:NewWindow(Title)
-
-	-- Instances:
+function Library:NewWindow(Title, coltheme)
 
 	local EXub = Instance.new("ScreenGui")
 	local Main = Instance.new("Frame")
 	local UICorner = Instance.new("UICorner")
-	local Sections = Instance.new("Frame")
-	local UICorner_2 = Instance.new("UICorner")
 	local Name = Instance.new("Frame")
+	local UICorner_2 = Instance.new("UICorner")
+	local Close = Instance.new("TextButton")
 	local UICorner_3 = Instance.new("UICorner")
 	local Text = Instance.new("TextLabel")
-	local Close = Instance.new("TextButton")
+	local Tabs = Instance.new("ScrollingFrame")
+	local UIListLayout = Instance.new("UIListLayout")
+	local TabExample = Instance.new("TextButton")
 	local UICorner_4 = Instance.new("UICorner")
-
-	--Properties:
+	local Text_2 = Instance.new("TextLabel")
+	local ImageLabel = Instance.new("ImageLabel")
+	local UICorner_5 = Instance.new("UICorner")
+	local Sections = Instance.new("Frame")
+	local UICorner_6 = Instance.new("UICorner")
+	local Scroll = Instance.new("ScrollingFrame")
+	local UIListLayout_2 = Instance.new("UIListLayout")
+	local SectionExample = Instance.new("TextButton")
+	local UICorner_7 = Instance.new("UICorner")
 
 	EXub.Name = "EXub"
 	EXub.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
@@ -24,51 +31,26 @@ function Library:NewWindow(Title)
 	Main.Name = "Main"
 	Main.Parent = EXub
 	Main.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-	Main.Position = UDim2.new(0.0173684061, 0, 0.342741907, 0)
-	Main.Size = UDim2.new(0, 451, 0, 311)
+	Main.Position = UDim2.new(0, 166, 0, 313)
+	Main.Size = UDim2.new(0, 560, 0, 365)
 	Main.Draggable = true
 	Main.Active = true
 	Main.Selectable = true
 
 	UICorner.Parent = Main
 
-	Sections.Name = "Sections"
-	Sections.Parent = Main
-	Sections.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	Sections.Position = UDim2.new(0, 0, 0.135048226, 0)
-	Sections.Size = UDim2.new(0, 162, 0, 269)
-
-	UICorner_2.Parent = Sections
-
 	Name.Name = "Name"
 	Name.Parent = Main
 	Name.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	Name.Size = UDim2.new(0, 451, 0, 49)
+	Name.LayoutOrder = 10
+	Name.Size = UDim2.new(0, 560, 0, 49)
 
-	UICorner_3.Parent = Name
-
-	Text.Name = "Text"
-	Text.Parent = Name
-	Text.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Text.BackgroundTransparency = 1.000
-	Text.LayoutOrder = 1
-	Text.Size = UDim2.new(0, 451, 0, 50)
-	Text.Font = Enum.Font.Unknown
-	if Title ~= nil then
-		Text.Text = Title
-	else
-		Text.Text = "EXub"
-	end
-	Text.TextColor3 = Color3.fromRGB(255, 255, 255)
-	Text.TextScaled = true
-	Text.TextSize = 14.000
-	Text.TextWrapped = true
-	Text.TextXAlignment = Enum.TextXAlignment.Left
+	UICorner_2.Parent = Name
 
 	Close.Name = "Close"
 	Close.Parent = Name
 	Close.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	Close.Position = UDim2.new(0.889135242, 0, 0, 0)
+	Close.Position = UDim2.new(0, 509, 0, 0)
 	Close.Size = UDim2.new(0, 50, 0, 49)
 	Close.Font = Enum.Font.Unknown
 	Close.Text = "X"
@@ -80,7 +62,120 @@ function Library:NewWindow(Title)
 		EXub:Destroy()
 	end)
 
-	UICorner_4.Parent = Close
-end
+	UICorner_3.Parent = Close
 
+	Text.Name = "Text"
+	Text.Parent = Name
+	Text.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Text.BackgroundTransparency = 1.000
+	Text.BorderSizePixel = 0
+	Text.LayoutOrder = 10
+	Text.Size = UDim2.new(0, 325, 0, 49)
+	Text.Font = Enum.Font.Unknown
+	Text.Text = "EXuby"
+	Text.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Text.TextScaled = true
+	Text.TextSize = 14.000
+	Text.TextWrapped = true
+	Text.TextXAlignment = Enum.TextXAlignment.Left
+
+	Tabs.Name = "Tabs"
+	Tabs.Parent = Main
+	Tabs.Active = true
+	Tabs.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Tabs.BackgroundTransparency = 1.000
+	Tabs.BorderSizePixel = 0
+	Tabs.Position = UDim2.new(0.410714298, 0, 0.169863015, 0)
+	Tabs.Size = UDim2.new(0, 305, 0, 302)
+	Tabs.CanvasSize = UDim2.new(0, 0, 0, 0)
+
+	UIListLayout.Parent = Tabs
+	UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+
+	TabExample.Name = "TabExample"
+	TabExample.Parent = Tabs
+	TabExample.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	TabExample.Size = UDim2.new(0, 304, 0, 44)
+	TabExample.Visible = false
+	TabExample.Font = Enum.Font.Unknown
+	TabExample.Text = ""
+	TabExample.TextColor3 = Color3.fromRGB(255, 255, 255)
+	TabExample.TextScaled = true
+	TabExample.TextSize = 14.000
+	TabExample.TextWrapped = true
+	TabExample.TextXAlignment = Enum.TextXAlignment.Right
+
+	UICorner_4.Parent = TabExample
+
+	Text_2.Name = "Text"
+	Text_2.Parent = TabExample
+	Text_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Text_2.BackgroundTransparency = 1.000
+	Text_2.Position = UDim2.new(0.174342111, 0, 0, 0)
+	Text_2.Size = UDim2.new(0, 184, 0, 44)
+	Text_2.Font = Enum.Font.ArialBold
+	Text_2.Text = "Tab"
+	Text_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Text_2.TextScaled = true
+	Text_2.TextSize = 14.000
+	Text_2.TextWrapped = true
+
+	ImageLabel.Parent = TabExample
+	ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	ImageLabel.BackgroundTransparency = 1.000
+	ImageLabel.Size = UDim2.new(0, 44, 0, 44)
+	ImageLabel.Image = "rbxassetid://12804017021"
+
+	UICorner_5.Parent = ImageLabel
+
+	Sections.Name = "Sections"
+	Sections.Parent = Main
+	Sections.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	Sections.Position = UDim2.new(0, 0, 0, 40)
+	Sections.Size = UDim2.new(0, 208, 0, 324)
+	Sections.ZIndex = 0
+
+	UICorner_6.Parent = Sections
+
+	Scroll.Name = "Scroll"
+	Scroll.Parent = Sections
+	Scroll.Active = true
+	Scroll.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Scroll.BackgroundTransparency = 1.000
+	Scroll.BorderSizePixel = 0
+	Scroll.LayoutOrder = 1
+	Scroll.Position = UDim2.new(0, 12, 0, 15)
+	Scroll.Size = UDim2.new(0, 196, 0, 308)
+	Scroll.CanvasSize = UDim2.new(0, 0, 0, 0)
+
+	UIListLayout_2.Parent = Scroll
+	UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
+	UIListLayout_2.Padding = UDim.new(0, 15)
+
+	SectionExample.Name = "SectionExample"
+	SectionExample.Parent = Scroll
+	SectionExample.BackgroundColor3 = Color3.fromRGB(74, 74, 74)
+	SectionExample.Size = UDim2.new(0, 175, 0, 51)
+	SectionExample.Visible = false
+	SectionExample.Font = Enum.Font.ArialBold
+	SectionExample.Text = "Section"
+	SectionExample.TextColor3 = Color3.fromRGB(255, 255, 255)
+	SectionExample.TextScaled = true
+	SectionExample.TextSize = 14.000
+	SectionExample.TextWrapped = true
+
+	UICorner_7.Parent = SectionExample
+	
+	local Window = {}
+	
+	function Window:NewSection(NameSc)
+		local newSc = SectionExample:Clone()
+		newSc.Parent = Scroll
+		newSc.Activated:Connect(function()
+			local tween = game:GetService("TweenService"):Create(newSc, TweenInfo.new(0.5, Enum.EasingStyle.Cubic, Enum.EasingDirection.Out), {BackgroundColor3 = Color3.fromRGB(255, 255, 255), TextColor3 = Color3.fromRGB(0, 0, 0)})
+			tween:Play()
+		end)
+	end
+	return Window
+end
 return Library
